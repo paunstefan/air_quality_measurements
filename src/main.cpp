@@ -1,3 +1,13 @@
+/**
+ * @file main.cpp
+ * @author Paun Stefan
+ * @brief Entry point for the air_quality program
+ * @version 0.1
+ * @date 2020-12-11
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
 #include <iostream>
 #include <string>
 #include <utility>
@@ -159,10 +169,10 @@ int main(){
 
         if(temp_data and co2_data){
 
-            std::string html_resp = "<h2>Air quality</h2><b><h3>Temperature: " + 
-                            std::to_string(temp_data->first) + " C</h3><b><h3>Humidity: " 
-                            + std::to_string(temp_data->second) + " %</h3><b><h3>CO2: "
-                            + std::to_string(co2_data->first) + " ppm</h3><b><h3>TVOC: "
+            std::string html_resp = "<h2>Air quality</h2><h3>Temperature: " + 
+                            std::to_string(temp_data->first) + " C</h3><h3>Humidity: " 
+                            + std::to_string(temp_data->second) + " %</h3><h3>CO2: "
+                            + std::to_string(co2_data->first) + " ppm</h3><h3>TVOC: "
                             + std::to_string(co2_data->second) + " ppb</h3>";
 
             res.set_content(html_resp, "text/html");
@@ -178,8 +188,8 @@ int main(){
         co2_mtx.unlock();
 
         if(bl){
-            std::string html_resp = "<h2>Baselines</h2><b><h3>CO2: "
-                                + std::to_string(bl->first) + "</h3><b><h3>TVOC: "
+            std::string html_resp = "<h2>Baselines</h2><h3>CO2: "
+                                + std::to_string(bl->first) + "</h3><h3>TVOC: "
                                 + std::to_string(bl->second) + "</h3>";
 
             res.set_content(html_resp, "text/html");

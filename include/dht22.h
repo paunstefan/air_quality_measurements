@@ -24,7 +24,7 @@ extern "C" {
 #endif
 
 #define DHT22_PULSES 41
-#define DHT22_MAXCOUNT 36000
+#define DHT22_MAXCOUNT 50000
 
 /**
  * @brief Return codes for the DHT22 library.
